@@ -1,1 +1,1 @@
-# pygame-util
+# pygame_util
