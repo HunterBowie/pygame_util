@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 
 import pygame
-from color import Color
+
+from .color import Color
 
 
 @dataclass

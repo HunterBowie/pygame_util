@@ -2,7 +2,8 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 import pygame
-from color import Color
+
+from .color import Color
 
 
 @dataclass

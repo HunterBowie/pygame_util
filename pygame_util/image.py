@@ -1,7 +1,8 @@
 from os import path
 
 import pygame
-from color import Color
+
+from .color import Color
 
 
 def load_image(
