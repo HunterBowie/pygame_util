@@ -16,30 +16,29 @@ class Timer:
 
     def start(self):
         """
-        Sets the timer relative to now.
+        Starts the timer.
         """
         self.start_time = time.monotonic()
         self.stop_time = -1
 
     def reset(self):
         """
-        Sets the timer to always read zero.
+        Sets the timer its intial state (get function will read as zero).
         """
         self.start_time = -1
         self.stop_time = -1
 
     def stop(self):
         """
-        Sets the timer stop value to now.
+        Sets the timer's stop value to now
         """
         self.stop_time = time.monotonic()
 
     def get(self) -> float:
         """
-        Returns the difference between now
-        and start value. If stop() is called,
-        then it returns the difference between
-        start and stop times.
+        Returns the difference between the start value and now. 
+        If the stop function has been called, then it returns the
+        difference between start and stop times.
         """
         if self.start_time == -1:
             return 0
@@ -50,16 +49,17 @@ class Timer:
 
     def passed(self, seconds: float) -> bool:
         """
-        Returns true if the timer has exceeded
-        the given time.
+        Returns true if the timer's get function has exceeded
+        the given value.
         """
         return self.get() >= seconds
 
     def stopped(self) -> bool:
-        "Check if the timer has been stopped."
+        """Checks if the timer has been stopped."""
         return self.stop_time != -1
 
     def started(self) -> bool:
+        """Checks if the timer has been started."""
         return self.start_time != -1
 
     def _trigger(self, function: Callable[[], None], seconds: int):
@@ -70,5 +70,6 @@ class Timer:
         function.__call__()
 
     def trigger(self, function: Callable[[], None], seconds: int):
+        """Calls a function after a certain number of seconds has passed."""
         threading.Thread(target=self._trigger,
                          args=(function, seconds)).start()

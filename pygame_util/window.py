@@ -33,6 +33,7 @@ class Window:
         self._clock: pygame.time.Clock = pygame.time.Clock()
 
     def update(self):
+        """Updates the window."""
         pygame.display.flip()
         self._clock.tick(self.max_fps)
         self.screen.fill(self.bg_color)

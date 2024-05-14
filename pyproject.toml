@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pygame-util"
-version = "1.0.1"
-description = ""
+version = "1.0.3"
+description = "A package that simplifies repetitive pygame code."
 authors = ["HunterBowie <73845280+HunterBowie@users.noreply.github.com>"]
 readme = "README.md"
 

@@ -4,6 +4,7 @@ import pygame
 
 
 class RelativePosition(Enum):
+    """An enum for positions on the screen."""
     TOP_LEFT = auto()
     TOP_RIGHT = auto()
     BOTTOM_LEFT = auto()
@@ -21,7 +22,7 @@ class PygameDisplayUninitialized(Exception):
 
 def position_relative_to(rect: pygame.Rect, pos: RelativePosition) -> pygame.Rect:
     """
-    Position a rect relative to specific position on the screen.
+    Returns a rect that has its original coordinates placed relative to a specific position on the screen.
 
     The Pygame display must be initialized before calling this function.
     """
@@ -65,6 +66,4 @@ def position_relative_to(rect: pygame.Rect, pos: RelativePosition) -> pygame.Rec
             x = screen_width - rect.width
         case other:
             ValueError("Invalid RootPosition argument")
-    rect.x += x
-    rect.y += y
     return rect

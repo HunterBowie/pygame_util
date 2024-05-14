@@ -1,7 +1,7 @@
 
 
 class Color:
-    """Useful acess to frequently used Colors in pygame."""
+    """Useful access to frequently used Colors in pygame."""
 
     BLACK: tuple[int, int, int] = (0, 0, 0)
     WHITE: tuple[int, int, int] = (255, 255, 255)

@@ -13,6 +13,7 @@ def load_image(
     convert: bool = False,
     scale: tuple[int, int] = None,
 ) -> pygame.Surface:
+    """Loads an image using pygame."""
     full_path = path.join(img_dir, img_name) + ext
     try:
         img = pygame.image.load(full_path)
