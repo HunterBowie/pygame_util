@@ -1,0 +1,2 @@
+Text
+- add a method center_relative_rect() that does center() then moves the coordinates relative to the inital x, y
