@@ -32,6 +32,16 @@ class Window:
             pygame.display.set_icon(self.icon)
         self._clock: pygame.time.Clock = pygame.time.Clock()
 
+    def set_caption(self, caption: str) -> None:
+        """Set the pygame window caption."""
+        self.caption = caption
+        pygame.display.set_caption(caption)
+
+    def set_icon(self, icon: pygame.Surface) -> None:
+        """Set the pygame window icon."""
+        self.icon = icon
+        pygame.display.set_icon(icon)
+
     def update(self):
         """Updates the window."""
         pygame.display.flip()

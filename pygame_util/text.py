@@ -127,6 +127,13 @@ class Text:
         self.center_x(rect)
         self.center_y(rect)
 
+    def center_relative(self, rect: pygame.Rect):
+        """Centers the text inside a rect relative to the texts coordinates."""
+        x, y = self.x, self.y
+        self.center(rect)
+        self.x += x
+        self.y += y
+
     @classmethod
     def calc_text_size(
         cls, string: str, style: TextStyle = TextStyle()
